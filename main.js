@@ -433,7 +433,7 @@ function renderAgentRates() {
         ${p.etf ? ` · ETF: $${p.etf}` : ""}
       </div>
       <div class="plan-view-tiers">
-        ${p.tiers.map(t=>`${(t.rate*100).toFixed(4)}¢/kWh${t.max?` (0–${t.max} kWh)":""}`).join(" → ")}
+        ${p.tiers.map(t=>(t.rate*100).toFixed(4)+"¢/kWh"+(t.max?" (0-"+t.max+" kWh)":"")).join(" → ")}
       </div>
       <div class="plan-view-avgs">
         ${p.avg500!=null?`<span>500kWh: ${p.avg500}¢</span>`:""}
